@@ -1,6 +1,6 @@
 package io.kv;
 
-import java.util.Set;
+import java.util.List;
 
 import org.springframework.data.annotation.Id;
 
@@ -10,9 +10,9 @@ public class Movie {
     Long id;
     private String title;
     private String description;
-    private Set<Rental> rental;
+    private List<Rental> rental;
 
-    public Movie(Long id, String title, String description, Set<Rental> rental) {
+    public Movie(Long id, String title, String description, List<Rental> rental) {
         this.id = id;
         this.title = title;
         this.description = description;

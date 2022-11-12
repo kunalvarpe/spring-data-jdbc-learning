@@ -1,8 +1,8 @@
 package io.kv;
 
 import java.time.Duration;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.junit.jupiter.api.Test;
 
@@ -18,7 +18,7 @@ class SpringDataJdbcApplicationTest {
 
     @Test
     void contextLoads() {
-        Set<Rental> rentals = new HashSet<>();
+        List<Rental> rentals = new ArrayList<>();
         rentals.add(new Rental(Duration.ofDays(1), 5));
         rentals.add(new Rental(Duration.ofDays(7), 15));
 
