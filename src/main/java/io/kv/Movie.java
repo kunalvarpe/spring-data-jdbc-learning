@@ -17,6 +17,10 @@ public class Movie {
         this.rental = rental;
     }
 
+    public void setRental(Rental rental) {
+        this.rental = rental;
+    }
+
     @Override
     public String toString() {
         return "Movie{" +

@@ -24,5 +24,10 @@ class SpringDataJdbcApplicationTest {
         Iterable<Movie> movies = movieRepository.findAll();
         assertThat(movies).hasSize(1);
         System.out.println(movies);
+
+        movie.setRental(null);
+
+        movieRepository.save(movie);
+
     }
 }
