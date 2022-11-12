@@ -20,3 +20,21 @@ create table rental (
     duration varchar(10),
     price integer
 );
+
+create table author (
+    id integer identity primary key,
+    name varchar(50),
+    birth_date date
+);
+
+create table book (
+    id integer identity primary key,
+    title varchar(255),
+    isbn varchar(255)
+);
+
+create table book_author (
+    author integer,
+    book integer,
+    primary key (author, book)
+);
