@@ -1,5 +1,7 @@
 package io.kv;
 
+import java.util.Set;
+
 import org.springframework.data.annotation.Id;
 
 public class Movie {
@@ -8,17 +10,17 @@ public class Movie {
     Long id;
     private String title;
     private String description;
-    private Rental rental;
+    private Set<Rental> rental;
 
-    public Movie(Long id, String title, String description, Rental rental) {
+    public Movie(Long id, String title, String description, Set<Rental> rental) {
         this.id = id;
         this.title = title;
         this.description = description;
         this.rental = rental;
     }
 
-    public void setRental(Rental rental) {
-        this.rental = rental;
+    public void addRental(Rental rental) {
+        this.rental.add(rental);
     }
 
     @Override

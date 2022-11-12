@@ -14,7 +14,8 @@ create table movie (
 );
 
 create table rental (
-    movie integer primary key references movie(id),
+    id integer identity primary key,
+    movie integer references movie(id),
     duration varchar(10),
     price integer
 );

@@ -1,6 +1,8 @@
 package io.kv;
 
 import java.time.Duration;
+import java.util.HashSet;
+import java.util.Set;
 
 import org.junit.jupiter.api.Test;
 
@@ -16,18 +18,18 @@ class SpringDataJdbcApplicationTest {
 
     @Test
     void contextLoads() {
-        Movie movie = new Movie(null, "Kantara", "Awesome",
-                                new Rental(Duration.ofDays(1), 5));
+        Set<Rental> rentals = new HashSet<>();
+        rentals.add(new Rental(Duration.ofDays(1), 5));
+        rentals.add(new Rental(Duration.ofDays(7), 15));
+
+        Movie movie = new Movie(null, "Kantara", "Awesome", rentals);
 
         movieRepository.save(movie);
 
         Iterable<Movie> movies = movieRepository.findAll();
         assertThat(movies).hasSize(1);
+
         System.out.println(movies);
-
-        movie.setRental(null);
-
-        movieRepository.save(movie);
 
     }
 }
