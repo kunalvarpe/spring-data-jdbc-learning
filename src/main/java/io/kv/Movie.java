@@ -32,4 +32,8 @@ public class Movie {
                ", rental=" + rental +
                '}';
     }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
 }

@@ -26,10 +26,15 @@ class SpringDataJdbcApplicationTest {
 
         movieRepository.save(movie);
 
+        movie.setTitle("Kantara2");
+        movieRepository.save(movie);
+
         Iterable<Movie> movies = movieRepository.findAll();
+        System.out.println(movies);
+
+
         assertThat(movies).hasSize(1);
 
-        System.out.println(movies);
 
     }
 }
