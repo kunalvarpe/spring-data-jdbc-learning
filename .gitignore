@@ -29,10 +29,12 @@ tmp/
 *.bak
 *.swp
 *~.nib
-local.properties
 .loadpath
 .factorypath
 
 # OS X
 .DS_Store
 
+# Spring
+*-local.properties
+*-local.yml
